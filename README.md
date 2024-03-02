@@ -1,16 +1,8 @@
 # type_rush
 
-A new Flutter project.
+Type Rush is an application and a gaming platform designed to assess the typing proficiency of players
+Evaluate both typing accuracy and speed while fostering a welcoming competitive atmosphere.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+● Players can Join Room and Create private Room
+● Can test their typing skills and accuracy among Friends
+● Scoring system is decides who wins the Game
