@@ -1,6 +1,8 @@
 import "package:flutter/material.dart";
+import "package:type_rush/utils/socket_methods.dart";
 import "package:type_rush/widgets/custom_button.dart";
 import "package:type_rush/widgets/custom_text_field.dart";
+import "package:type_rush/utils/socket_client.dart";
 
 class CreateRoomScreen extends StatefulWidget {
   const CreateRoomScreen({super.key});
@@ -11,6 +13,16 @@ class CreateRoomScreen extends StatefulWidget {
 
 class _CreateRoomScreenState extends State<CreateRoomScreen> {
   final TextEditingController _nameController = TextEditingController();
+  final SocketClient _socketClient = SocketClient.instance;
+  final SocketMethods _socketMethods = SocketMethods();
+
+  @override
+  void initState() {
+    super.initState();
+    _socketMethods.updateGameListener(context);
+    _socketMethods.notCorrectGameListener(context);
+
+  }
 
   @override
   void dispose() {
@@ -47,16 +59,13 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
                 ),
                 CustomTextField(
                     controller: _nameController,
-                    hintText: "Enter Your Nickname"
-                    ),
-                    
+                    hintText: "Enter Your Nickname"),
                 const SizedBox(
                   height: 30,
                 ),
-                
-                CustomButton(
+                 CustomButton(
                   text: 'Create',
-                  onTap: () {},
+                  onTap: () {Navigator.pushNamed(context, '/game-screen');}
                 )
               ],
             ),
